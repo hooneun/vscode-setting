@@ -395,6 +395,39 @@
         "editor.formatOnSave": true
     },
 
+    /**
+    * ============================================================
+    * gopls - Go Language Server
+    * ============================================================
+    */
+
+    "gopls": {
+        // gofmt보다 조금 더 엄격한 formatter.
+        // 팀 컨벤션이 gofmt만 원하면 false로 변경.
+        "formatting.gofumpt": true,
+
+        // 사용하지 않는 파라미터 분석.
+        "analyses": {
+            "unusedparams": true,
+            "unusedwrite": true,
+            "nilness": true,
+            "shadow": true
+        },
+
+        // Staticcheck 분석 활성화.
+        // 코드 품질 검사가 늘어나지만 큰 monorepo에서는 약간 무거울 수 있음.
+        "staticcheck": true,
+
+        // 자동완성에서 미리 선택되는 후보 개선.
+        "usePlaceholders": true,
+
+        // Hover 문서에 링크 표시.
+        "linksInHover": true,
+
+        // 심볼/참조/진단 등의 matcher.
+        "matcher": "Fuzzy"
+    },
+
 
     /**
      * ============================================================
