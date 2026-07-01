@@ -109,7 +109,7 @@
     "editor.inlineSuggest.suppressSuggestions": true,
 
     // Hover는 켜되 지연 시간을 길게 해서 노이즈 감소.
-    "editor.hover.enabled": true,
+    "editor.hover.enabled": "on",
     "editor.hover.delay": 1500,
 
     // 전구 Quick Fix UI 비활성화.
@@ -141,7 +141,7 @@
      */
 
     "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
     "editor.fontWeight": "400",
     "editor.fontVariations": false,
 
@@ -345,6 +345,56 @@
         "javascript": "html"
     },
 
+    /**
+    * ============================================================
+    * Go
+    * ============================================================
+    */
+
+    // Go 확장 기본 도구 관리.
+    // 보통 gopls는 자동으로 설치/관리되지만, 문제가 생기면
+    // Command Palette > Go: Install/Update Tools 실행.
+    "go.toolsManagement.autoUpdate": true,
+
+    // Go formatter.
+    // "default"는 gopls를 formatter로 사용.
+    // 공식 vscode-go 설정에서도 gopls formatter 사용이 권장됨.
+    "go.formatTool": "default",
+
+    // 저장 시 Go 파일 포맷.
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true,
+
+        // 저장 시 import 정리, 누락 import 추가.
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+
+        // Go는 탭 기반 포맷이 표준이라 자동 감지보다 명시 추천.
+        "editor.insertSpaces": false,
+        "editor.tabSize": 4
+    },
+
+    // go.mod 전용 설정.
+    "[gomod]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true
+    },
+
+    // go.sum 전용 설정.
+    "[gosum]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true
+    },
+
+    // gotmpl: Go template 파일.
+    // html/template, text/template, Helm template 등을 볼 때 유용.
+    "[gotmpl]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true
+    },
+
 
     /**
      * ============================================================
@@ -369,7 +419,7 @@
 
     // 전역 Format on Save는 끔.
     // 필요한 언어만 아래 language override에서 개별 활성화.
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
 
 
     /**
@@ -498,5 +548,6 @@
     "vscode_custom_css.imports": [
         "file:///Users/glennraya/custom-vscode.css",
         "file:///Users/glennraya/vscode-script.js"
-    ]
+    ],
+    "editor.formatOnPaste": true
 }
