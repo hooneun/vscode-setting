@@ -1,34 +1,207 @@
 {
-  "vim.useCtrlKeys": true, // Vim 모드에서 Ctrl 키 매핑 활성화 여부
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-s>": false,
-    "<C-z>": false
-    // "<Tab>": true, // Tab 키를 Vim이 처리하지 못하도록 설정
-    // "<S-Tab>": ture // Shift+Tab도 Vim이 처리하지 않도록 설정
-  },
-  "editor.cursorBlinking": "expand", // 커서가 깜박일 때 확장되는 애니메이션 효과를 적용합니다
-  "workbench.activityBar.location": "hidden", // 좌측의 활동 바(파일 탐색기, 검색 등의 아이콘 모음)를 숨깁니다
-  "workbench.statusBar.visible": false, // 하단의 상태 표시줄을 숨깁니다
-  "editor.minimap.enabled": false, // 레이아웃 제어 버튼(창 분할 등)을 비활성화합니다
-  "breadcrumbs.enabled": false, // 파일 경로와 코드 구조를 보여주는 상단의 이동 경로(브레드크럼)를 비활성화합니다
-  "workbench.tips.enabled": false, // VS Code 사용 팁 표시를 비활성화합니다
-  "workbench.startupEditor": "none", // VS Code 시작 시 시작 페이지를 표시하지 않습니다
-  "editor.overviewRulerBorder": false, // 스크롤바 옆 오버뷰 룰러의 테두리를 제거합니다
-  "editor.hideCursorInOverviewRuler": true, // 오버뷰 룰러에서 커서 위치 표시를 숨깁니다
-  "editor.matchBrackets": "never", // 괄호 쌍 강조 표시 기능을 비활성화합니다
-  "editor.hover.delay": 1500, // 마우스 호버 시 정보가 표시되기까지의 지연 시간을 1.5초로 설정합니다
-  "editor.hover.enabled": true, // 마우스 호버 시 정보 표시 기능을 활성화합니다
-  "editor.gotoLocation.multipleReferences": "goto", // 여러 참조가 있을 때 바로 첫 번째 참조로 이동합니다
-  "editor.gotoLocation.multipleDefinitions": "goto", // 여러 정의가 있을 때 바로 첫 번째 정의로 이동합니다
-  "editor.gotoLocation.multipleDeclarations": "goto", // 여러 선언이 있을 때 바로 첫 번째 선언으로 이동합니다
-  "workbench.editor.enablePreviewFromQuickOpen": false, // 빠른 열기에서 파일을 선택할 때 미리보기 모드가 아닌 정식 편집기로 엽니다
-  "editor.gotoLocation.multipleImplementations": "goto", // 여러 구현이 있을 때 바로 첫 번째 구현으로 이동합니다
-  "editor.gotoLocation.multipleTypeDefinitions": "goto",
-  "window.menuBarVisibility": "compact",
-  "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false, // 여러 타입 정의가 있을 때 바로 첫 번째 타입 정의로 이동합니다
-  "window.density.editorTabHeight": "compact",
-  "workbench.editor.wrapTabs": true,
-  "workbench.editor.tabSizing": "shrink"
+    "editor.copyWithSyntaxHighlighting": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.emptySelectionClipboard": false,
+    "workbench.editor.enablePreview": false,
+    "window.newWindowDimensions": "inherit",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.snippetSuggestions": "top",
+    "editor.detectIndentation": false,
+    "window.nativeFullScreen": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "workbench.editor.showTabs": "multiple",
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "off",
+    "editor.guides.indentation": false,
+
+    // Silence the Noise
+    "breadcrumbs.enabled": false,
+    "scm.diffDecorations": "none",
+    "editor.hover.delay": 1500,
+    "editor.hover.enabled": "on",
+    "editor.matchBrackets": "never",
+    "workbench.tips.enabled": false,
+    "editor.colorDecorators": false,
+    "git.decorations.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.lightbulb.enabled": "off",
+    "editor.selectionHighlight": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "none",
+    "editor.occurrencesHighlight": "off",
+    "problems.decorations.enabled": false,
+    "editor.renderControlCharacters": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+    // Typography
+    "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
+    "editor.suggestFontSize": 14,
+    "editor.suggestLineHeight": 30,
+    "terminal.integrated.lineHeight": 1,
+    "terminal.integrated.fontSize": 14,
+
+    "search.useIgnoreFiles": false,
+    "search.exclude": {
+        // Hide everything in /vendor, except the "laravel" and "livewire" folder.
+        "**/vendor/{[^l],?[^ai]}*": true,
+        // Hide everything in /public, except "index.php"
+        "**/public/{[^i],?[^n]}*": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/_ide_helper.php": true,
+        "**/composer.lock": true,
+        "**/package-lock.json": true,
+        "storage": true,
+        ".phpunit.result.cache": true
+    },
+
+    /**
+    * Code
+    **/
+    // Include "-" in word selection.
+    "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+    "emmet.includeLanguages": {
+        "blade": "html",
+        "vue-html": "html",
+        "vue": "html",
+        "react": "html",
+        "javascript": "html"
+    },
+    "files.associations": {
+        ".php_cs": "php",
+        ".php_cs.dist": "php"
+    },
+
+    /**
+    * PHP
+    **/
+    "php.suggest.basic": false,
+
+    /**
+    * Prettier
+    **/
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[tailwindcss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "prettier.requireConfig": true,
+    "prettier.useEditorConfig": false,
+    "explorer.sortOrder": "type",
+    "prettier.tabWidth": 4,
+    "vetur.format.options.tabSize": 4,
+    "workbench.tree.indent": 15,
+    "[html]": {
+        "editor.defaultFormatter": "apility.beautify-blade",
+        "editor.formatOnSave": true
+    },
+    "editor.wordWrapColumn": 120,
+    "files.autoSave": "afterDelay",
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.linkedEditing": true,
+    "editor.formatOnSave": false,
+    // "editor.fontLigatures": false,
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+    "diffEditor.wordWrap": "on",
+    "notebook.output.wordWrap": true,
+    "editor.minimap.maxColumn": 250,
+    "codesnap.containerPadding": "8em",
+    "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 12px 24px",
+    "explorer.confirmDelete": false,
+    "editor.accessibilitySupport": "off",
+    "chat.editor.wordWrap": "on",
+    "editor.wordWrap": "wordWrapColumn",
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html"
+    },
+    "tailwindCSS.experimental.configFile": null,
+    "editor.fontWeight": "400",
+    "workbench.activityBar.location": "hidden",
+    "workbench.statusBar.visible": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "codesnap.backgroundColor": "#FFC540",
+    "codesnap.showLineNumbers": false,
+    "codesnap.roundedCorners": true,
+    "editor.padding.top": 16,
+    "editor.cursorBlinking": "solid",
+    "editor.stickyScroll.enabled": false,
+    "editor.lineHeight": 16,
+
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+              "scope": [
+                "comment",
+                "keyword",
+                "variable.language",
+                "entity.other.attribute-name.html",
+                "entity.other.attribute-name",
+                "keyword.control",
+                "storage.type",
+                "comment",
+                "comment.block",
+                "comment.line"
+              ],
+              "settings": {
+                "fontStyle": ""
+              }
+            }
+          ]
+    },
+    "material-icon-theme.saturation": 0,
+    "vscode_custom_css.imports": [
+        "file:///Users/glennraya/custom-vscode.css",
+        "file:///Users/glennraya/vscode-script.js"
+    ],
+    "workbench.colorTheme": "React Theme",
+    "workbench.iconTheme": "eq-material-theme-icons-light",
+    "workbench.sideBar.location": "left",
+    "material-icon-theme.files.color": "#42a5f5",
+    "workbench.tree.enableStickyScroll": false,
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "editor.fontSize": 13,
+    "editor.fontVariations": false
 }
