@@ -1,66 +1,325 @@
 {
+    /**
+     * ============================================================
+     * Editor - 기본 편집 동작
+     * ============================================================
+     */
+
+    // 자동완성 항목을 Enter로 확정하지 않음. Neovim/터미널 스타일에 잘 맞음.
+    "editor.acceptSuggestionOnEnter": "off",
+
+    // 코드 복사 시 문법 색상 포함하지 않음.
     "editor.copyWithSyntaxHighlighting": false,
-    "diffEditor.ignoreTrimWhitespace": false,
+
+    // 빈 선택 영역에서 클립보드 붙여넣기 동작 비활성화.
     "editor.emptySelectionClipboard": false,
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.revealIfOpen": true,
-    "window.newWindowDimensions": "inherit",
-    "editor.multiCursorModifier": "ctrlCmd",
-    "files.trimTrailingWhitespace": true,
-    "diffEditor.renderSideBySide": false,
-    "editor.snippetSuggestions": "top",
+
+    // 들여쓰기 자동 감지 비활성화. 프로젝트 설정을 명확히 따르게 함.
     "editor.detectIndentation": false,
-    "window.nativeFullScreen": true,
-    "workbench.layoutControl.enabled": false,
-    "window.commandCenter": false,
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "workbench.editor.showTabs": "multiple",
-    "editor.minimap.enabled": false,
-    "editor.lineNumbers": "off",
-    "editor.guides.indentation": false,
-    "editor.rulers": [120],
+
+    // 여러 커서 단축키를 Ctrl/Cmd 기준으로 사용.
+    "editor.multiCursorModifier": "ctrlCmd",
+
+    // 선택한 단어와 동일한 단어 하이라이트 비활성화.
+    "editor.selectionHighlight": false,
+
+    // 현재 줄 하이라이트 비활성화.
+    "editor.renderLineHighlight": "none",
+
+    // 동일 심볼 발생 위치 하이라이트 비활성화.
+    "editor.occurrencesHighlight": "off",
+
+    // 괄호 매칭 강조 비활성화.
+    "editor.matchBrackets": "never",
+
+    // 제어 문자 표시 비활성화.
+    "editor.renderControlCharacters": false,
+
+    // 공백 문자는 경계 부분만 표시.
     "editor.renderWhitespace": "boundary",
+
+    // 세로 기준선.
+    "editor.rulers": [120],
+
+    // 줄바꿈 기준 컬럼.
+    "editor.wordWrapColumn": 120,
+
+    // 120 컬럼 기준으로 자동 줄바꿈.
+    "editor.wordWrap": "wordWrapColumn",
+
+    // 에디터 상단 여백.
+    "editor.padding.top": 16,
+
+    // 커서 깜빡임 없음.
+    "editor.cursorBlinking": "solid",
+
+    // Sticky Scroll 비활성화.
+    "editor.stickyScroll.enabled": false,
+
+    // 접근성 모드 자동 감지 비활성화. 경고/성능 노이즈 감소.
+    "editor.accessibilitySupport": "off",
+
+    // HTML/XML 태그 동시 편집.
+    "editor.linkedEditing": true,
+
+    // 미니맵 비활성화.
+    "editor.minimap.enabled": false,
+
+    // 미니맵을 다시 켤 경우 최대 컬럼 제한.
+    "editor.minimap.maxColumn": 250,
+
+    // 라인 넘버 숨김.
+    "editor.lineNumbers": "off",
+
+    // 들여쓰기 가이드 숨김.
+    "editor.guides.indentation": false,
+
+    // Overview ruler의 테두리 제거.
+    "editor.overviewRulerBorder": false,
+
+    // Overview ruler에서 커서 숨김.
+    "editor.hideCursorInOverviewRuler": true,
+
+    // 단어 선택 시 "-"도 단어 일부로 취급.
+    "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+
+
+    /**
+     * ============================================================
+     * Editor - 자동완성 / 힌트 / Hover
+     * ============================================================
+     */
+
+    // 스니펫을 자동완성 목록 상단에 표시.
+    "editor.snippetSuggestions": "top",
+
+    // 문자열 내부에서도 자동완성 표시.
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+
+    // 파라미터 힌트 비활성화.
+    "editor.parameterHints.enabled": false,
+
+    // 인레이 힌트 표시.
+    // Neovim 스타일을 더 원하면 "offUnlessPressed" 추천.
     "editor.inlayHints.enabled": "on",
 
-    // Silence the Noise
-    "breadcrumbs.enabled": false,
-    "scm.diffDecorations": "none",
+    // Inline Suggest가 일반 Suggest와 겹치는 것 방지.
+    "editor.inlineSuggest.suppressSuggestions": true,
+
+    // Hover는 켜되 지연 시간을 길게 해서 노이즈 감소.
+    "editor.hover.enabled": true,
     "editor.hover.delay": 1500,
-    "editor.hover.enabled": "on",
-    "editor.matchBrackets": "never",
-    "workbench.tips.enabled": false,
-    "editor.colorDecorators": false,
-    "git.decorations.enabled": false,
-    "workbench.startupEditor": "none",
+
+    // 전구 Quick Fix UI 비활성화.
     "editor.lightbulb.enabled": "off",
-    "editor.selectionHighlight": false,
-    "editor.overviewRulerBorder": false,
-    "editor.renderLineHighlight": "none",
-    "editor.occurrencesHighlight": "off",
-    "problems.decorations.enabled": false,
-    "editor.renderControlCharacters": false,
-    "editor.hideCursorInOverviewRuler": true,
+
+    // 자동완성 후보 선택 상태바 숨김.
+    "editor.suggestFontSize": 14,
+    "editor.suggestLineHeight": 30,
+
+
+    /**
+     * ============================================================
+     * Editor - 이동 / 정의 / 참조
+     * ============================================================
+     */
+
+    // 여러 참조가 있어도 목록 대신 바로 이동.
     "editor.gotoLocation.multipleReferences": "goto",
     "editor.gotoLocation.multipleDefinitions": "goto",
     "editor.gotoLocation.multipleDeclarations": "goto",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.gotoLocation.multipleImplementations": "goto",
     "editor.gotoLocation.multipleTypeDefinitions": "goto",
 
-    // Typography
+
+    /**
+     * ============================================================
+     * Typography - 폰트 / 줄 간격
+     * ============================================================
+     */
+
     "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
-    "editor.suggestFontSize": 14,
-    "editor.suggestLineHeight": 30,
-    "terminal.integrated.lineHeight": 1,
+    "editor.fontSize": 13,
+    "editor.fontWeight": "400",
+    "editor.fontVariations": false,
+
+    // Geist Mono / Fira Code 계열 stylistic set 사용.
+    // 폰트가 지원하지 않으면 무시됨.
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+
+    // 압축된 미니멀 라인 높이.
+    // 너무 답답하면 18~20 추천.
+    "editor.lineHeight": 16,
+
+
+    /**
+     * ============================================================
+     * Files - 저장 / 공백 / 파일 연결
+     * ============================================================
+     */
+
+    // 저장 시 trailing whitespace 제거.
+    "files.trimTrailingWhitespace": true,
+
+    // 파일 끝에 newline 삽입.
+    "files.insertFinalNewline": true,
+
+    // 파일 끝의 불필요한 여러 newline 제거.
+    "files.trimFinalNewlines": true,
+
+    // 자동 저장.
+    "files.autoSave": "afterDelay",
+
+    // 파일 확장자별 언어 연결.
+    "files.associations": {
+        "*.blade.php": "blade",
+        ".php_cs": "php",
+        ".php_cs.dist": "php"
+    },
+
+
+    /**
+     * ============================================================
+     * Workbench - UI / 레이아웃 / 탭
+     * ============================================================
+     */
+
+    // 새 창 크기를 기존 창 기준으로 유지.
+    "window.newWindowDimensions": "inherit",
+
+    // macOS 네이티브 전체화면.
+    "window.nativeFullScreen": true,
+
+    // 상단 Command Center 숨김.
+    "window.commandCenter": false,
+
+    // Layout Control 버튼 숨김.
+    "workbench.layoutControl.enabled": false,
+
+    // 시작 시 Welcome 화면 표시하지 않음.
+    "workbench.startupEditor": "none",
+
+    // Activity Bar를 하단에 배치.
+    "workbench.activityBar.location": "bottom",
+
+    // Status Bar 숨김.
+    "workbench.statusBar.visible": false,
+
+    // Sidebar 위치.
+    "workbench.sideBar.location": "left",
+
+    // Breadcrumbs 숨김.
+    "breadcrumbs.enabled": false,
+
+    // 에디터 탭 여러 개 표시.
+    "workbench.editor.showTabs": "multiple",
+
+    // 파일 클릭 시 preview tab 대신 실제 탭으로 열기.
+    "workbench.editor.enablePreview": false,
+
+    // Quick Open에서 연 파일도 preview tab 사용하지 않음.
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    // 이미 열린 파일을 다시 열면 기존 탭으로 이동.
+    "workbench.editor.revealIfOpen": true,
+
+    // Command Palette 추천 명령 활성화.
+    "workbench.commandPalette.experimental.suggestCommands": true,
+
+    // Quick Open이 포커스 잃어도 닫히지 않음.
+    "workbench.quickOpen.closeOnFocusLost": false,
+
+    // Tree indent.
+    "workbench.tree.indent": 15,
+
+    // Explorer/Tree sticky scroll 비활성화.
+    "workbench.tree.enableStickyScroll": false,
+
+    // Explorer 정렬 기준.
+    "explorer.sortOrder": "type",
+
+    // 삭제 확인창 비활성화.
+    "explorer.confirmDelete": false,
+
+    // 테마.
+    "workbench.colorTheme": "React Dev Theme (dark)",
+
+
+    /**
+     * ============================================================
+     * Terminal - 터미널 중심 워크플로우
+     * ============================================================
+     */
+
+    // 터미널을 하단 패널이 아니라 에디터 영역에 열기.
+    // zellij/tmux/neovim 느낌에 가까움.
+    "terminal.integrated.defaultLocation": "editor",
+
+    // 터미널 폰트 크기.
     "terminal.integrated.fontSize": 14,
 
+    // 터미널 줄 간격.
+    "terminal.integrated.lineHeight": 1,
+
+
+    /**
+     * ============================================================
+     * Diff / Notebook / Chat
+     * ============================================================
+     */
+
+    // diff에서 공백 차이도 보여줌.
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    // diff를 좌우가 아니라 inline 형태로 표시.
+    "diffEditor.renderSideBySide": false,
+
+    // diff 줄바꿈.
+    "diffEditor.wordWrap": "on",
+
+    // Notebook 출력 줄바꿈.
+    "notebook.output.wordWrap": true,
+
+    // Chat editor 줄바꿈.
+    "chat.editor.wordWrap": "on",
+
+
+    /**
+     * ============================================================
+     * Git / SCM / Problems - 노이즈 줄이기
+     * ============================================================
+     */
+
+    // Git 변경 장식 숨김.
+    "git.decorations.enabled": false,
+
+    // SCM diff decoration 숨김.
+    "scm.diffDecorations": "none",
+
+    // Problems decoration 숨김.
+    "problems.decorations.enabled": false,
+
+
+    /**
+     * ============================================================
+     * Search - 검색 제외
+     * ============================================================
+     */
+
+    // .gitignore를 검색 제외에 사용하지 않음.
+    // vendor 일부를 직접 검색하려는 의도라면 유지.
     "search.useIgnoreFiles": false,
+
     "search.exclude": {
-        // Hide everything in /vendor, except the "laravel" and "livewire" folder.
+        // vendor 안에서 대부분 숨기되 laravel/livewire 쪽은 보려는 의도.
+        // 패턴이 복잡해서 예상과 다르게 동작할 수 있음.
         "**/vendor/{[^l],?[^ai]}*": true,
-        // Hide everything in /public, except "index.php"
+
+        // public 안에서 index.php 외 대부분 숨기려는 의도.
         "**/public/{[^i],?[^n]}*": true,
+
         "**/node_modules": true,
         "**/dist": true,
         "**/_ide_helper.php": true,
@@ -70,11 +329,14 @@
         ".phpunit.result.cache": true
     },
 
+
     /**
-    * Code
-    **/
-    // Include "-" in word selection.
-    "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+     * ============================================================
+     * Language - Emmet / HTML / Vue / React
+     * ============================================================
+     */
+
+    // Blade, Vue, React, JS에서도 Emmet HTML 확장 사용.
     "emmet.includeLanguages": {
         "blade": "html",
         "vue-html": "html",
@@ -82,118 +344,159 @@
         "react": "html",
         "javascript": "html"
     },
-    "files.associations": {
-        ".php_cs": "php",
-        ".php_cs.dist": "php"
-    },
+
 
     /**
-    * PHP
-    **/
+     * ============================================================
+     * PHP / Laravel
+     * ============================================================
+     */
+
+    // VS Code 기본 PHP 자동완성 비활성화.
+    // Intelephense 사용 시 중복 자동완성 방지.
     "php.suggest.basic": false,
 
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+
+
     /**
-    * Prettier
-    **/
+     * ============================================================
+     * Formatter - 전역 정책
+     * ============================================================
+     */
+
+    // 전역 Format on Save는 끔.
+    // 필요한 언어만 아래 language override에서 개별 활성화.
+    "editor.formatOnSave": false,
+
+
+    /**
+     * ============================================================
+     * Prettier
+     * ============================================================
+     */
+
+    // prettier 설정 파일이 있는 프로젝트에서만 Prettier 사용.
+    "prettier.requireConfig": true,
+
+    // .editorconfig를 Prettier가 따르지 않게 함.
+    "prettier.useEditorConfig": false,
+
+    // Prettier tab width.
+    "prettier.tabWidth": 4,
+
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[tailwindcss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[vue]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
+
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
-    "prettier.requireConfig": true,
-    "prettier.useEditorConfig": false,
-    "explorer.sortOrder": "type",
-    "prettier.tabWidth": 4,
-    "vetur.format.options.tabSize": 4,
-    "workbench.tree.indent": 15,
-    "[html]": {
-        "editor.defaultFormatter": "apility.beautify-blade",
+
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
-    "editor.wordWrapColumn": 120,
-    "files.autoSave": "afterDelay",
+
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
 
-    "editor.quickSuggestions": {
-        "strings": true
+    "[tailwindcss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
     },
+
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "security.workspace.trust.untrustedFiles": "open",
-    "editor.linkedEditing": true,
-    "editor.formatOnSave": false,
-    // "editor.fontLigatures": false,
-    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
-    "diffEditor.wordWrap": "on",
-    "notebook.output.wordWrap": true,
-    "editor.minimap.maxColumn": 250,
-    "explorer.confirmDelete": false,
-    "editor.accessibilitySupport": "off",
-    "chat.editor.wordWrap": "on",
-    "editor.wordWrap": "wordWrapColumn",
-    "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-    },
-    "editor.fontWeight": "400",
-    "workbench.activityBar.location": "bottom",
-    "workbench.statusBar.visible": false,
-    "workbench.commandPalette.experimental.suggestCommands": true,
-    "workbench.quickOpen.closeOnFocusLost": false,
-    "editor.inlineSuggest.suppressSuggestions": true,
-    "editor.padding.top": 16,
-    "editor.cursorBlinking": "solid",
-    "editor.stickyScroll.enabled": false,
-    "editor.lineHeight": 16,
 
+
+    /**
+     * ============================================================
+     * HTML / Blade Formatter
+     * ============================================================
+     */
+
+    // 현재 설정은 일반 HTML도 Blade formatter로 포맷함.
+    // Laravel/Blade 중심이면 유지해도 됨.
+    "[html]": {
+        "editor.defaultFormatter": "apility.beautify-blade",
+        "editor.formatOnSave": true
+    },
+
+    // Vetur tab size.
+    "vetur.format.options.tabSize": 4,
+
+
+    /**
+     * ============================================================
+     * Security / WSL
+     * ============================================================
+     */
+
+    // 신뢰하지 않는 파일도 바로 열기.
+    "security.workspace.trust.untrustedFiles": "open",
+
+    // WSL UNC host 허용.
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+
+
+    /**
+     * ============================================================
+     * Token Color Customization
+     * ============================================================
+     */
+
+    // 특정 토큰의 italic/bold 스타일 제거.
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
-              "scope": [
-                "comment",
-                "keyword",
-                "variable.language",
-                "entity.other.attribute-name.html",
-                "entity.other.attribute-name",
-                "keyword.control",
-                "storage.type",
-                "comment",
-                "comment.block",
-                "comment.line"
-              ],
-              "settings": {
-                "fontStyle": ""
-              }
+                "scope": [
+                    "comment",
+                    "keyword",
+                    "variable.language",
+                    "entity.other.attribute-name.html",
+                    "entity.other.attribute-name",
+                    "keyword.control",
+                    "storage.type",
+                    "comment.block",
+                    "comment.line"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
             }
-          ]
+        ]
     },
+
+
+    /**
+     * ============================================================
+     * Custom CSS / JS
+     * ============================================================
+     */
+
+    // Custom CSS 플러그인 사용 시 적용.
+    // 경로가 macOS 사용자 경로라 WSL/Windows에서는 동작하지 않을 수 있음.
     "vscode_custom_css.imports": [
         "file:///Users/glennraya/custom-vscode.css",
         "file:///Users/glennraya/vscode-script.js"
-    ],
-    "workbench.sideBar.location": "left",
-    "workbench.tree.enableStickyScroll": false,
-    "editor.fontSize": 13,
-    "editor.fontVariations": false
+    ]
 }
