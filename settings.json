@@ -141,7 +141,7 @@
      */
 
     "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
-    "editor.fontSize": 14,
+    "editor.fontSize": 13,
     "editor.fontWeight": "400",
     "editor.fontVariations": false,
 
@@ -151,7 +151,7 @@
 
     // 압축된 미니멀 라인 높이.
     // 너무 답답하면 18~20 추천.
-    "editor.lineHeight": 16,
+    "editor.lineHeight": 20,
 
 
     /**
@@ -242,9 +242,6 @@
 
     // 삭제 확인창 비활성화.
     "explorer.confirmDelete": false,
-
-    // 테마.
-    "workbench.colorTheme": "React Dev Theme (dark)",
 
 
     /**
