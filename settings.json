@@ -110,7 +110,7 @@
 
     // Hover는 켜되 지연 시간을 길게 해서 노이즈 감소.
     "editor.hover.enabled": "on",
-    "editor.hover.delay": 1500,
+    "editor.hover.delay": 500,
 
     // 전구 Quick Fix UI 비활성화.
     "editor.lightbulb.enabled": "off",
@@ -140,7 +140,7 @@
      * ============================================================
      */
 
-    "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
+    "editor.fontFamily": "Fira Code, Geist Mono, JetBrains Mono",
     "editor.fontSize": 13,
     "editor.fontWeight": "400",
     "editor.fontVariations": false,
@@ -579,5 +579,8 @@
         "file:///Users/glennraya/custom-vscode.css",
         "file:///Users/glennraya/vscode-script.js"
     ],
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+    "chat.viewSessions.orientation": "stacked",
+    "svelte.enable-ts-plugin": true
 }
