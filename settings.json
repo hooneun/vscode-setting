@@ -83,6 +83,66 @@
     // 단어 선택 시 "-"도 단어 일부로 취급.
     "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
 
+    // vim - 검색 결과 하이라이트
+    "vim.hlsearch": true,
+
+    // vim - 입력 중 실시간 검색
+    "vim.incsearch": true,
+
+    // vim - 기본 대소문자 무시
+    "vim.ignorecase": true,
+
+    // vim - 대문자를 포함하면 대소문자 구분
+    "vim.smartcase": true,
+
+    // vim - 시스템 클립보드 사용
+    "vim.useSystemClipboard": true,
+
+    // vim - EasyMotion 사용
+    "vim.easymotion": true,
+
+    // vim - s/S 기반 빠른 2글자 점프
+    "vim.sneak": true,
+
+    // vim - ys/cs/ds 같은 surround 명령
+    "vim.surround": true,
+
+    // vim - yank 시 하이라이트
+    "vim.highlightedyank.enable": true,
+
+    // leader 키를 Space로 지정
+    "vim.leader": "<space>",
+
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "w"],
+            "commands": ["workbench.action.files.save"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["<leader>", "e"],
+            "commands": ["workbench.view.explorer"]
+        },
+        {
+            "before": ["<leader>", "p"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<leader>", "f"],
+            "commands": ["workbench.action.findInFiles"]
+        },
+        {
+            "before": ["<leader>", "c", "a"],
+            "commands": ["editor.action.quickFix"]
+        },
+        {
+            "before": ["<leader>", "r", "n"],
+            "commands": ["editor.action.rename"]
+        }
+    ],
 
     /**
      * ============================================================
@@ -140,8 +200,8 @@
      * ============================================================
      */
 
-    "editor.fontFamily": "Fira Code, Geist Mono, JetBrains Mono",
-    "editor.fontSize": 13,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', Fira Code",
+    "editor.fontSize": 12,
     "editor.fontWeight": "400",
     "editor.fontVariations": false,
 
@@ -205,7 +265,7 @@
     "workbench.activityBar.location": "bottom",
 
     // Status Bar 숨김.
-    "workbench.statusBar.visible": false,
+    "workbench.statusBar.visible": true,
 
     // Sidebar 위치.
     "workbench.sideBar.location": "left",
